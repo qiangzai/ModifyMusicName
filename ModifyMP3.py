@@ -9,7 +9,7 @@ myPath = raw_input()
 list = os.listdir(myPath)
 print(list)
 
-for i,file in enumerate(os.listdir(path)):
+for i,file in enumerate(os.listdir(myPath)):
 #	print(file)
 	a = random.randint(0,999)
 	b = "0"
@@ -22,7 +22,7 @@ for i,file in enumerate(os.listdir(path)):
 	
 	newName = b + file
 	print(newName)
-	os.rename(os.path.join(path, file), os.path.join(path, newName))
+	os.rename(os.path.join(myPath, file), os.path.join(myPath, newName))
 
 
 
