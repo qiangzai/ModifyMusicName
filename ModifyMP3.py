@@ -19,8 +19,15 @@ for i,file in enumerate(os.listdir(myPath)):
 		b = "00" + str(a)
 	else :
 		b = str(a)
-	
-	newName = b + file
+            
+    #添加名字处理
+    s = file[0:3]
+    #	print(s)
+    newName = ""
+    if s.isdigit():
+        newName = file.replace(s,b)
+    else :
+        newName = b + file
 	print(newName)
 	os.rename(os.path.join(myPath, file), os.path.join(myPath, newName))
 
