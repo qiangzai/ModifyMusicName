@@ -10,7 +10,6 @@ list = os.listdir(myPath)
 print(list)
 
 for i,file in enumerate(os.listdir(myPath)):
-#	print(file)
 	a = random.randint(0,999)
 	b = "0"
 	if (a < 100 and a > 9) :
@@ -19,17 +18,22 @@ for i,file in enumerate(os.listdir(myPath)):
 		b = "00" + str(a)
 	else :
 		b = str(a)
-            
-    #添加名字处理
-    s = file[0:3]
-    #	print(s)
-    newName = ""
-    if s.isdigit():
-        newName = file.replace(s,b)
-    else :
-        newName = b + file
+	
+	s = file[0:3]
+	newName = ""
+	print(s)
+	if s.isdigit() :
+		newName = file.replace(s,b)
+	else :
+		newName = b + file
+		
 	print(newName)
 	os.rename(os.path.join(myPath, file), os.path.join(myPath, newName))
+	
+	
+	
+	
+
 
 
 
